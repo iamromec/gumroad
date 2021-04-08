@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gumroad Overlay</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="gumroad-overlay">
+        <div class="row">
+          <div class="col text-center p-50">
+            <i class="icon-overlay"></i>
+            <h3>Overlay</h3>
+            <p class="dull-color">Inline purchases without leaving your site</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <hr style="margin: 0;">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col p-50" style="padding-top: 40px;">
+            <h4 class="dull-color" style="margin-bottom: 5px;">Button text:</h4>
+            <div style="height: 15px;"></div>
+            <input type="text" class="form-control input-lg" v-model="buttonText" :placeholder="defaultButtonText">
+
+            <div style="height: 25px;"></div>
+            <h4 class="dull-color" style="margin-bottom: 5px;">Custom url:</h4>
+            <div style="height: 15px;"></div>
+            <input type="text" class="form-control input-lg" v-model="customURL" :placeholder="url">
+          
+            <div style="padding-top: 25px;">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" v-model="autoTrigger" id="autoTriggerPayment">
+                <label class="form-check-label dull-color" for="autoTriggerPayment">
+                  Auto-trigger the payment form
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" v-model="singleProductPurchase" id="singleProductPurchase">
+                <label class="form-check-label dull-color" for="singleProductPurchase">
+                  Allow single-product purchases only
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row preview">
+          <div class="col-12 pt-50 text-center">
+            <a class="gumroad-button" :href="getURL">{{ buttonText || defaultButtonText}}</a>
+          </div>
+
+          <div class="col-12 text-center" style="padding: 25px 0">
+            <p style="font-weight: bold; color: #797874;">Copy and paste this code into your website</p>
+            <p class="dull-color">We highly recommend you have an SSL certificate to increase buyer confidence.</p>
+          </div>
+
+          <div class="col-12 p-50" style="padding-top: 0;">
+            <div class="clipboard">
+              <div class="row">
+                <div class="col-lg-10">
+                  <code style="white-space: pre-line;">{{getCode}}</code>
+                </div>
+                <div class="col-lg-2 text-center">
+                  <div class="clipboard-icon" title="Copy to Clipboard" @click="copy" data-toggle="tooltip" title="Hooray!"><i class="icon-copy"></i></div>
+                  <small v-if="copied">Copied</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>

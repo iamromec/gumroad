@@ -1,0 +1,83 @@
+body {
+  background: #efefe9;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+#app {
+  width: 50%;
+  margin: auto;
+  padding-top: 2%;
+}
+.p-50 {
+  padding: 50px;
+}
+.pt-50 { padding-top: 50px; }
+.pb-50 { padding-bottom: 50px; }
+.gumroad-overlay {
+  border: 1px solid #ddd;
+  border-top: 0 solid #ddd;
+  background: #fff;
+  margin: 0 0 25px;
+  font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.icon-overlay {
+  background: url(https://assets.gumroad.com/packs/media/widgets/icon-overlay-09d24f7c.svg);
+  width: 57px;
+  height: 72px;
+  display: inline-block;
+}
+.dull-color {
+  color: #999;
+}
+.preview {
+  border-top: 1px solid #ddd;
+  background: #f5f5f5;
+  font-size: 14px;
+}
+.gumroad-button {
+  margin: auto;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0,0,0,.4);
+  color: #999;
+  line-height: 50px;
+  padding: 0 15px;
+}
+.gumroad-button:hover {
+  color: #999;
+  text-decoration: none;
+}
+.clipboard {
+  background: #fff;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+code {
+  color: chocolate;
+}
+.icon-copy {
+  background: url(https://assets.gumroad.com/packs/media/widgets/icon-copy-a45dbdf0.svg) top no-repeat;
+  width: 20px;
+  height: 21px;
+  display: inline-block;
+  padding: 0 8px;
+  text-align: center;
+}
+.clipboard-icon {
+  background: #36a9ae linear-gradient(180deg,#37adb2,#329ca0);
+  border: 1px solid #2a8387;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.12);
+  cursor: pointer;
+  padding: 11px 20px 12px;
+}
