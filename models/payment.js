@@ -7,6 +7,20 @@ const schema = new Schema({
     required: true,
     index: true
   },
+  bankAccount: {
+    type: Schema.Types.ObjectId,
+    ref: 'BankAccount',
+    required: true,
+    index: true,
+    validate: {
+      isAsync: true,
+      validator: function(v, cb) {
+        mongoose.model('BankAccount').findById(v, {
+          _id: true
+        }).then(r => cb(!!r));
+      }
+    }
+  },
   paymentSchedule: {
     type: Schema.Types.ObjectId,
     ref: 'PaymentSchedule',
